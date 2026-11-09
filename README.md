@@ -8,7 +8,7 @@ and Gemini via `~/.gemini/antigravity/skills`.
 ## Own skills
 
 - `sdlc-architect`, `sdlc-discovery`, `sdlc-qa-engineer`
-- `sdlc-developer-frontend`
+- `sdlc-developer-backend`, `sdlc-developer-frontend`
 - `sdlc-code-reviewer-backend`, `sdlc-code-reviewer-frontend`
 - `sdlc-security-gate`, `sdlc-dba`, `sdlc-observability`
 - `java-version-management`

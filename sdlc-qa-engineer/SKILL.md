@@ -11,6 +11,8 @@ description: "SDLC Phase 2 — QA Engineer. Designs test strategy, aligns with u
 
 Standalone. Load on demand; nothing chains into or out of it.
 
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md`, its test runner commands, fixture patterns (e.g. Object Mother), integration test base classes, and database cleanup rules override the generic defaults in this skill.
+
 ---
 
 ## Phase 1: Test Design Alignment (MANDATORY GATE)

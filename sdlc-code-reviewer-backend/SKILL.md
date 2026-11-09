@@ -11,6 +11,8 @@ The Refactor Phase. Polish code until it reads like clean art. This skill review
 
 Standalone. Load on demand; nothing chains into or out of it.
 
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/java/CLAUDE.md`), its specific conventions (such as JHipster `BadRequestAlertException` in controllers, selective `AbstractAuditingEntity` inheritance, or `ExceptionTranslator` patterns) **override** the generic defaults below.
+
 ---
 
 ## 1. The Refactor Phase

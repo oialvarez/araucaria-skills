@@ -13,6 +13,8 @@ The Architect phase defines **The What**, not **The How**. It produces the struc
 
 Standalone. Load on demand; nothing chains into or out of it.
 
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md`, its architectural layer rules, DTO/mapper conventions, and service patterns override the generic defaults in this skill.
+
 ---
 
 ## Work Type Variants

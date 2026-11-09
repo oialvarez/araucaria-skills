@@ -14,6 +14,8 @@ Cross-cutting opt-in — applies whenever database changes are introduced at any
 Not a gate. Activated on demand for schema changes, migrations, query tuning, or JPA entity modifications.
 ```
 
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/java/CLAUDE.md`), its Liquibase changelog naming/registration rules, timestamp conventions, and selective `AbstractAuditingEntity` inheritance **override** the generic defaults below.
+
 ## Work Type Variants
 
 | Work Type | DBA Focus |

@@ -14,6 +14,8 @@ Cross-cutting opt-in — applies whenever new code paths, error handling, or ser
 Not a gate. Activated on demand for logging reviews, tracing setup, metrics planning, or alerting configuration.
 ```
 
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md`, its logging and metrics conventions override generic defaults in this skill.
+
 ## Work Type Variants
 
 | Work Type | Observability Focus |

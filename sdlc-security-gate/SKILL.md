@@ -11,6 +11,8 @@ description: "SDLC Phase 4 — Security Gate (MANDATORY). Reviews security impli
 
 Standalone. Load on demand; nothing chains into or out of it.
 
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/java/CLAUDE.md`), check its documented security architecture (such as URL-level `/api/**` security rules in `SecurityConfiguration`, `AuthoritiesConstants`, and controller guard conventions) before flagging missing method-level annotations.
+
 ---
 
 ## 1. Endpoint Security Checklist

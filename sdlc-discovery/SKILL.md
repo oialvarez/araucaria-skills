@@ -45,6 +45,8 @@ When any source conflicts with another, **never silently adopt one over the othe
 
 Standalone. Load on demand; nothing chains into or out of it.
 
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (including stack-specific files), its architecture rules, stack versions, and verification tools override generic defaults in this skill. When verifying behavior in a sibling repository, always run `git fetch origin --prune` in that repo first and read from `origin/master` (or its active integration branch), never from a stale local branch.
+
 ---
 
 ## Work Type Variants
@@ -225,17 +227,17 @@ Before touching any code, **extract timestamps and identifiers from the bug repo
 
 1. **Scan the ticket** for: timestamps ("happened at 2:30pm EST"), UUIDs (callId, sessionId, sessionUUID), environment (prod/qa/staging), and reporter timezone
 2. **Convert to UTC** — Jira comments show local times. EST = UTC-5, EDT = UTC-4, PDT = UTC-7
-3. **Pull the logs** from the project's log platform (Datadog, CloudWatch, Loki, ...). Use a log-fetching skill or script if one is installed; otherwise ask the user for access instead of guessing. Choose the query mode:
+3. **Pull the logs** from the project's log platform (Datadog, CloudWatch, Loki, ...). Use a log-fetching skill or script if one is installed (e.g. `fetch-datadog-logs`); otherwise ask the user for access instead of guessing. **Note for Datadog**: production is tagged `env:production` (never `env:prod`, which silently returns zero logs). Choose the query mode:
 
 ```text
 # If ticket has a UUID → filter by it (relative window is fine):
 service:<service> @<idField>:<UUID>        last 1h
 
 # If ticket has a known timestamp → absolute window (±15 min buffer):
-service:<service> env:prod                 2026-06-30T14:15:00Z → 2026-06-30T14:45:00Z
+service:<service> env:production           2026-06-30T14:15:00Z → 2026-06-30T14:45:00Z
 
 # If no timestamp or UUID → fallback to relative window:
-service:<service> env:prod                 last 30m
+service:<service> env:production           last 30m
 ```
 
 Search order: start with the service that received the request, then follow the call downstream.
