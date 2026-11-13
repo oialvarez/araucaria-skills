@@ -121,6 +121,32 @@ does not block or change the work.
 **Production Implications** — what could regress, what to watch after deploy. "None" when true;
 never omit.
 
+## Bug tickets
+
+When the ticket is the bug itself (found in production or QA), not a task under a parent. Same
+tone and paste rules. Every section is a few lines; anything longer goes in chat or a comment.
+
+**Title** — `[PREFIX] What fails, in the user's terms`.
+
+**Description** — one or two sentences: what fails and under which condition.
+
+**Steps to Reproduce** — numbered. Include the data precondition that makes it fail.
+
+**Actual Behavior** / **Expected Behavior** — numbered, one line each, in the same order so QA
+can pair them.
+
+**Evidence** — what someone needs to find it in the logs: every id the system logs for that
+occurrence (for a call, both the session id and the call id; otherwise the request or correlation
+id), the environment, the UTC timestamp and the exact error text to search. One line
+per occurrence, at most three. Only occurrences tied to an id in the real logs; an error you
+cannot tie to an id stays in chat.
+
+**Production Impact** — what happens today without the fix and how often, with the count and
+window taken from the logs. Two or three lines. Production Implications stays separate: that one
+is about the fix.
+
+Acceptance Criteria, Technical Details and Story Points as above.
+
 ## Rules
 
 - Verify against the code before claiming anything. That is about your confidence, not the text.
