@@ -106,7 +106,7 @@ folder otherwise. Pure Markdown, identical in Claude and Gemini. Load one when t
 > **Repo Convention Precedence**: When a repository has its own `CLAUDE.md` or `AGENTS.md` (including
 > stack-specific files like `src/main/java/CLAUDE.md` and `src/main/webapp/CLAUDE.md`), its stack
 > versions, framework idioms (e.g. Vue 2.6 + Vuex 3 vs Vue 3 + Pinia, JHipster `BadRequestAlertException`,
-> selective `AbstractAuditingEntity`, URL-level security) and commit/formatting rules (`husky-commit`)
+> selective `AbstractAuditingEntity`, URL-level security) and commit/formatting rules (`commit-message`)
 > **override** generic template defaults in the `sdlc-*` skills.
 
 | Skill | Load when |
@@ -124,7 +124,6 @@ folder otherwise. Pure Markdown, identical in Claude and Gemini. Load one when t
 | `ticket-definition` | Breaking a shell ticket into implementable Jira tasks |
 | `teammate-comments` | Writing paste-ready replies for PRs, Confluence, Jira or Slack |
 | `commit-message` | Formatting any git commit message (`Problem:` + `Solution:` bullets + `Jira ticket:`) |
-| `husky-commit` | Committing, amending or pushing in repos with `.husky/` (coverage gate by hand, hooks off, no Prettier on existing files) |
 
 The reviewer, security, DBA and observability skills emit checkbox-style reports. Those
 checkboxes are governed by the Verification Protocol above: run the command, paste the output.
@@ -148,7 +147,7 @@ task touches their domain. Never create `.agents/skills/` in a repo.
 ## Universal Rules
 
 - **Never push directly to `master` or `main`** — use feature branches + PRs always (branch from the integration branch the overlay names, if any)
-- **Commit & push flow**: Always follow `commit-message` and `husky-commit` (`<JIRA-KEY>: <Imperative summary>`, `Problem:` paragraph, `Solution:` bullets, `Jira ticket:` URL, one commit per story via amend, hooks off so Prettier never reformats existing files; offer push only, never `gh` or PR creation)
+- **Commit & push flow**: Always follow `commit-message` (`<JIRA-KEY>: <Imperative summary>`, `Problem:` paragraph, `Solution:` bullets, `Jira ticket:` URL, one commit per story via amend, hooks off so Prettier never reformats existing files; offer push only; `gh` is fine for PRs, CI runs and `gh workflow run`, but never to create a PR)
 - **Test coverage**: 90% minimum on all new code
 - **Never commit agent internals** to project repos: `.agents/`, `.claude/`, `.gemini/`, or `SKILL.md` files
   (the harness repo `araucaria-skills` is the one place they are versioned)

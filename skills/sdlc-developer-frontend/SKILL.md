@@ -11,7 +11,7 @@ description: "SDLC Phase 3 — Frontend Developer (Vue/TypeScript). Implements U
 
 Standalone. Load on demand; nothing chains into or out of it.
 
-> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/webapp/CLAUDE.md`), its framework version and patterns (such as Vue 2.6 Class Components `@Component` + Vuex 3 instead of Vue 3 Composition API + Pinia, or `husky-commit` rules forbidding Prettier on existing files) **override** the generic greenfield defaults below.
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/webapp/CLAUDE.md`), its framework version and patterns (such as Vue 2.6 Class Components `@Component` + Vuex 3 instead of Vue 3 Composition API + Pinia, or the `commit-message` rule forbidding Prettier on existing files) **override** the generic greenfield defaults below.
 
 ---
 

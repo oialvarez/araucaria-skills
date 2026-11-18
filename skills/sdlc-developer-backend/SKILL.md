@@ -11,7 +11,7 @@ description: "SDLC Phase 3 — Backend Developer (Java/Spring & Elixir/OTP). Imp
 
 Standalone. Load on demand; nothing chains into or out of it.
 
-> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/java/CLAUDE.md`), its architecture, exception handling, concurrency helpers (`AtomicGuard`, `LockService`), and commit/formatting rules (`commit-message`, `husky-commit`) **override** the generic defaults below.
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/java/CLAUDE.md`), its architecture, exception handling, concurrency helpers (`AtomicGuard`, `LockService`), and commit/formatting rules (`commit-message`) **override** the generic defaults below.
 
 ---
 
@@ -207,7 +207,7 @@ public class UserController {
 
 ## PR Hygiene
 
-- **One PR = One Commit** (squash/amend before pushing; follow the repo's `commit-message` and `husky-commit` skills if present)
+- **One PR = One Commit** (squash/amend before pushing; follow the `commit-message` skill)
 - **Commit message format:** `PROJ-XXXX: Short imperative description`
 - **Branch naming:** `feature/PROJ-XXXX-short-description` or `bugfix/PROJ-XXXX-short-description`
 - **No merge commits** in feature branches (rebase on main)

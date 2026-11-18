@@ -11,7 +11,7 @@ The Refactor Phase (Frontend). Clean, DRY, accessible components. This skill rev
 
 Standalone. Load on demand; nothing chains into or out of it.
 
-> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/webapp/CLAUDE.md`), its framework version, TypeScript strictness, factory DI patterns, and commit/formatting rules (`husky-commit` forbidding Prettier on existing files) **override** the generic defaults below.
+> **Repository Convention Precedence**: When the active repository has a `CLAUDE.md` or `AGENTS.md` (e.g. `src/main/webapp/CLAUDE.md`), its framework version, TypeScript strictness, factory DI patterns, and commit/formatting rules (`commit-message` forbidding Prettier on existing files) **override** the generic defaults below.
 
 ---
 

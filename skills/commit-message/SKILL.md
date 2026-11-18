@@ -1,6 +1,6 @@
 ---
 name: commit-message
-description: "Oscar's commit message format: title with the Jira key, Problem, Solution as bullets, Jira ticket URL. Read before writing ANY commit message in his repos. Triggers on 'commitea', 'comitea', 'haz el commit', 'commit this', 'write the commit message', 'commit and push'."
+description: "Oscar's commit message format: title with the Jira key, Problem, Solution as bullets, Jira ticket URL. Read before writing ANY commit message in his repos. Triggers on 'commitea', 'comitea', 'haz el commit', 'commit this', 'write the commit message', 'commit and push', 'amend', 'push', 'haz push'."
 ---
 
 # Commit message
@@ -29,7 +29,16 @@ Jira ticket: <JIRA-BASE-URL>/browse/<JIRA-KEY>
 
 Then the `Co-Authored-By` trailer the harness requires, after the Jira line.
 
-Run the commit (and any push) through the `husky-commit` skill: coverage gate by hand, no reformatting.
+## Committing
+
+- Keep the diff to the real change. Never run Prettier on existing files.
+- If the repo has `.husky/`, run its coverage gate by hand first (`sh npmw run coverage`, 10-minute
+  timeout). If it fails, do not commit; show the failure and fix it.
+- Commit with hooks off: `git -c core.hooksPath=/dev/null commit -F -`. Never mention the hook,
+  its permissions or `chmod`.
+- One commit per story: amend, then `git push --force-with-lease=<branch>:<old sha>`. Push only
+  when he asks. Stage only your files, never `.agents/`, `.claude/`, `.gemini/` or `SKILL.md`.
+- `gh` is fine for PRs, CI runs and `gh workflow run CI --ref <branch>`, never to create a PR.
 
 ## Rules
 
